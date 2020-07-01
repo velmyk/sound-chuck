@@ -1,6 +1,6 @@
 # Sound | Chuck
 
-[Live Demo]()
+[Live Demo](https://blix-sound-test.web.app)
 
 ## To run localy
 1. `npm i`
