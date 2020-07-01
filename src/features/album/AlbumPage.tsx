@@ -23,11 +23,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     box: {
         flex: 1,
         '&:first-child': {
-            maxWidth: 200,
+            margin: theme.spacing(1),
+            maxWidth: '100%',
+
+            [theme.breakpoints.up('md')]: {
+                maxWidth: 200,
+            },
         },
         '&:last-child': {
             maxWidth: 600,
-            marginLeft: theme.spacing(2),
+            margin: theme.spacing(0, 2),
         },
     },
     title: {
