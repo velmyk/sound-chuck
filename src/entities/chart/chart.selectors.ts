@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import _get from 'lodash/get';
-import Artist from './Artist';
+import Artist from './Chart';
 
 export const artistsHashSelector = (state: any) =>
     _get(state, `entities.artists.artistsHash`, {});

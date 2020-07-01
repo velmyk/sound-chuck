@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { sagas as artistsSagas, reducer as artists } from 'entities/artists';
+import { reducer as tracks } from 'entities/tracks';
+import { reducer as albums } from 'entities/albums';
+import { sagas as chartSagas, reducer as chart } from 'entities/chart';
 
 const reducer = combineReducers({
     entities: combineReducers({
-        artists,
+        tracks,
+        albums,
     }),
 });
 export const sagaMiddleware = createSagaMiddleware();
@@ -15,4 +18,4 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default createStore(reducer, composeEnhancers(applyMiddleware(...middlewares)));
 
-sagaMiddleware.run(artistsSagas.default);
+sagaMiddleware.run(chartSagas.default);

@@ -1,0 +1,3 @@
+export default {
+    TRACKS_LIST_RECEIVED: 'TRACKS/TRACKS_LIST_RECEIVED',
+};

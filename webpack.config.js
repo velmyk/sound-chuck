@@ -3,10 +3,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const dotenv = require('dotenv');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
 
+    if (!isProduction) {
+        dotenv.config();
+    }
+    
     const config = {
         entry: {
             app: path.join(__dirname, 'src', 'index.tsx'),
