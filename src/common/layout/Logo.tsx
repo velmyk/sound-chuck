@@ -69,7 +69,7 @@ const Logo: React.FC = () => {
             Sound
             <div className={classes.animatedBlock}>
                 <div className={classes.slider} />
-                <span className={classes.animatedText}>Test</span>
+                <span className={classes.animatedText}>Chuck</span>
             </div>
         </Typography>
     );
