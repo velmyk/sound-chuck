@@ -63,9 +63,11 @@ export default createMuiTheme({
         secondary: blueGrey,
         background: {
             default: 'rgba(0, 0, 0, 0.8)',
+            paper: 'rgba(255, 255, 255, 0.1)',
         },
         text: {
-            primary: 'rgba(1, 1, 1, 1)',
+            primary: 'rgba(255, 255, 255, 1)',
+            secondary: 'rgba(255, 255, 255, 0.8)',
         },
     },
     shape: {

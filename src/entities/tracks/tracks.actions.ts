@@ -7,3 +7,7 @@ export const tracksListReceived = (tracksList: TrackType[]) => ({
         tracksList
     }
 });
+
+export const tracksListRequest = () => ({
+    type: artistsActionTypes.TRACKS_LIST_REQUEST,
+});

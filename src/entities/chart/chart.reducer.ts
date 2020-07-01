@@ -11,7 +11,7 @@ const initialState = {
 const events = (state = initialState, action: any) => {
     switch (action.type) {
         case chartActionTypes.CHART_DATA_RECEIVED: {
-            const { albums, tracks } = action.payload;
+            const { albums, tracks } = action.payload.chartData;
             const tracksIds = tracks.map((track: TrackType) => track.id);
             const albumsIds = albums.map((album: AlbumType) => album.id);
             return {

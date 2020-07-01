@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
     if (!isProduction) {
         dotenv.config();
     }
-    
+
     const config = {
         entry: {
             app: path.join(__dirname, 'src', 'index.tsx'),
@@ -52,6 +52,9 @@ module.exports = (env, argv) => {
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'src', 'index.html'),
+            }),
+            new webpack.DefinePlugin({
+                'process.env.BASE_API_URL': JSON.stringify(process.env.BASE_API_URL),
             }),
         ],
 

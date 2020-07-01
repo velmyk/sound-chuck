@@ -5,13 +5,13 @@ import AlbumType from './Album';
 export const albumsHashSelector = (state: any) =>
     _get(state, `entities.albums.albumsHash`, {});
 
-export const artistsListSelector = createSelector(
+export const albumsListSelector = createSelector(
     albumsHashSelector,
     (albumsHash: { [key: string]: AlbumType }) => Object.values(albumsHash),
 );
 
-export const artistsDataSelector = createSelector(
+export const albumDataSelector = createSelector(
     albumsHashSelector,
     (_: any, props: any) => props.albumId,
-    (albumsHash: { [key: string]: AlbumType }, artistId) => _get(albumsHash, artistId),
+    (albumsHash: { [key: string]: AlbumType }, albumId) => _get(albumsHash, albumId),
 );

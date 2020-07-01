@@ -1,12 +1,12 @@
-import artistsActionTypes from './chart.actionTypes';
+import chartActionTypes from './chart.actionTypes';
 import ChartType from './Chart';
 
 export const chartDataRequest = () => ({
-    type: artistsActionTypes.CHART_DATA_REQUEST,
+    type: chartActionTypes.CHART_DATA_REQUEST,
 });
 
 export const chartDataReceived = (chartData: ChartType) => ({
-    type: artistsActionTypes.CHART_DATA_RECEIVED,
+    type: chartActionTypes.CHART_DATA_RECEIVED,
     payload: {
         chartData
     },

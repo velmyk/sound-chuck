@@ -1,8 +1,7 @@
 import { takeLatest, call, all, put } from 'redux-saga/effects';
 import * as chartGateway from './chart.gateway';
-import {
-    chartDataReceived,
-} from './chart.actions';
+import chartActionTypes from './chart.actionTypes';
+import { chartDataReceived } from './chart.actions';
 
 export function* fetchChartSaga() {
     try {
@@ -13,15 +12,16 @@ export function* fetchChartSaga() {
     } catch (e) {
         console.error({
             _error: `Failed to fetch chart data`,
+            e,
         });
     }
 }
 
-function* eventsSaga() {
+function* chartSaga() {
     yield all([
         // @ts-ignore
-        yield takeLatest(artistsActionTypes.CHART_DATA_REQUEST, fetchChartSaga),
+        yield takeLatest(chartActionTypes.CHART_DATA_REQUEST, fetchChartSaga),
     ]);
 }
 
-export default eventsSaga;
+export default chartSaga;
